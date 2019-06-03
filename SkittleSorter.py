@@ -1,6 +1,7 @@
 #Sketch for determening the color of the Skittle and moving servo positions accordingly
 #Run calibrate() --> calDone = 0, first and put the gotten values in cal_values = [].
-#Sleep() statements should be changed to fit your Skittle Sorter.
+#Sleep() statements should be changed to fit your Skittle Sorter. 
+#Same goes with SERVO.ChangeDutyCycle(K) where K has to be changed accoring to your SKittle Sorters Servo positions.
 #By Luuk van Sundert and Max van Grinsven
 
 from picamera import PiCamera
