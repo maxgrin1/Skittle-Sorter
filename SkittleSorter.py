@@ -1,3 +1,6 @@
+#Sketch for determening the color of the Skittle and moving servo positions accordingly
+#By Luuk van Sundert and Max van Grinsven
+
 from picamera import PiCamera
 from colorthief import ColorThief
 from scipy import spatial
@@ -16,15 +19,15 @@ bottomServo.start(7)
 camera = PiCamera()
 #Red, Orange, Purple, Yellow, Green
 calDone = 1
-cal_values = [[129, 37, 44], [134, 48, 48], [104, 39, 40], [112, 54, 46], [95, 57, 42]]
+#Fill in between the brackets the values gotten from calibrate()
+cal_values = [] 
 dominant_color = 0
 tree = spatial.KDTree(cal_values)
 calString = "Insert "
 def getDominantColor():
     camera.capture('maxgrin1.jpg')
     img =  cv2.imread('maxgrin1.jpg', 1)
-
-    cropped = img[340:360, 900:920] #Values need to be changed later
+    cropped = img[340:360, 900:920] #May need to change according to your own Skittle Sorter camera's position.
     cv2.imwrite('maxgrin1_cropped.jpg', cropped)
     color_thief = ColorThief('maxgrin1_cropped.jpg')
     cv2.imshow('test', cropped)
