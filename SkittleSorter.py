@@ -94,7 +94,7 @@ def calibrate():
     
 #The actual sketch itself
 if(calDone):
-    for a in range(10): #Range(K) K is the amount of Skittles to be sorted.
+    while True: 
         getSkittle()
 else calibrate()
 cv2.destroyAllWindows()
